@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+     display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ffa81c;
+    color: #fff;
+}
+
+header {
+    justify-content: space-between;
+}
+
+footer {
+     justify-content: space-around;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    background-color: #ffa81c9c;
+}
