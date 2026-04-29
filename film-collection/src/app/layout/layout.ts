@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-layout',
+  selector: 'fc-layout',
   standalone: true,
   imports: [RouterOutlet, RouterLink],
   templateUrl: './layout.html',
