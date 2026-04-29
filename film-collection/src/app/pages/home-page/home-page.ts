@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Film } from '../../models/films.model';
+import { Poster } from './components/poster/poster';
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [Poster],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })

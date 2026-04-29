@@ -9,3 +9,5 @@ export interface Film {
     posterUrl: string;
     isFavorite: boolean;
 }
+
+export type PosterModel = Pick<Film, 'posterUrl' | 'title' | 'year' | 'genre' | 'rating'>;

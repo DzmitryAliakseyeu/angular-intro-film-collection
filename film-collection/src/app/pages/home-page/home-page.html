@@ -1,1 +1,4 @@
-<p>home-page works!</p>
+
+@for (poster of filmsList(); track poster.id) {
+  <app-poster [poster]="poster"></app-poster>
+}
