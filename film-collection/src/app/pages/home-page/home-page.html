@@ -1,4 +1,4 @@
 
-@for (poster of filmsList(); track poster.id) {
-  <app-poster [poster]="poster" (toggleFavorite)="toggleFavorite(poster.id)"></app-poster>
+@for (poster of filmsCollection(); track poster.id) {
+  <app-poster [poster]="poster"></app-poster>
 }

@@ -4,7 +4,9 @@ import { Film } from '../../../models/films.model';
 import { Films } from '../../../services/films/films';
 
 
-export const filmsResolver: ResolveFn<Film[]> = () => {
+export const filmsResolver: ResolveFn<Film[]> = async () => {
 	const filmsService = inject(Films);
-	return filmsService.getFilms();
+  const result = await filmsService.getFilms();
+  filmsService.filmsCollection.set(result);
+	return result;
 };

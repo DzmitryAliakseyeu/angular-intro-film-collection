@@ -1,7 +1,8 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Film } from '../../models/films.model';
+
 import { Poster } from './components/poster/poster';
+import { Films } from '../../services/films/films';
 
 @Component({
   selector: 'app-home-page',
@@ -11,13 +12,7 @@ import { Poster } from './components/poster/poster';
 })
 export class HomePage {
   route = inject(ActivatedRoute);
-  filmsList = signal<Film[]>((this.route.snapshot.data['films'] as Film[] | undefined) ?? []);
+  filmsService = inject(Films);
+  filmsCollection = computed(()=> this.filmsService.filmsCollection());
 
-  toggleFavorite(id: number) {
-    console.log(id);
-    this.filmsList.update(films => {
-      return films.map((film) => film.id == id ? { ...film, isFavorite: !film.isFavorite } : film);
-    });
-    console.log(this.filmsList());
-  }
 }
