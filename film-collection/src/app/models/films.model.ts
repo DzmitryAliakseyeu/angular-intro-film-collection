@@ -10,4 +10,4 @@ export interface Film {
     isFavorite: boolean;
 }
 
-export type PosterModel = Pick<Film, 'posterUrl' | 'title' | 'year' | 'genre' | 'rating'>;
+export type PosterModel = Pick<Film, 'posterUrl' | 'title' | 'year' | 'genre' | 'rating' | 'isFavorite' | 'id'>;

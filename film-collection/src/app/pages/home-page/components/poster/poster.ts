@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { PosterModel } from '../../../../models/films.model';
 
 @Component({
@@ -9,4 +9,6 @@ import { PosterModel } from '../../../../models/films.model';
 })
 export class Poster {
   poster = input.required<PosterModel>();
+  toggleFavorite = output<number>();
+
 }
