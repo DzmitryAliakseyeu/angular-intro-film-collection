@@ -1,0 +1,17 @@
+@if (film(); as f) {
+  <div class="details">
+    <img [src]="f.posterUrl" [alt]="f.title">
+    <div class="details-info">
+      <h1>{{ f.title }}</h1>
+      <p><strong>Year:</strong> {{ f.year }}</p>
+      <p><strong>Genre:</strong> {{ f.genre }}</p>
+      <p><strong>Rating:</strong> {{ f.rating }}</p>
+      <p><strong>Duration:</strong> {{ f.duration | duration }}</p>
+      <p>{{ f.description }}</p>
+      <button (click)="goBack()">Back</button>
+    </div>
+  </div>
+} @else {
+  <p>Film not found.</p>
+  <button (click)="goBack()">Back to catalog</button>
+}

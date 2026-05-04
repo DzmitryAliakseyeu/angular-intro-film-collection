@@ -1,0 +1,10 @@
+<div class='poster-image'>
+    <img src="{{ poster().posterUrl }}" alt="{{ poster().title }}">
+</div>
+
+<h2>{{ poster().title }} ({{ poster().year }})</h2>
+<p>🎭 {{ poster().genre }}</p>
+<p>⭐ {{ poster().rating }}</p>
+<button class="toggle" (click)="toggleFavorite.emit(poster().id); $event.stopPropagation()">
+  {{ poster().isFavorite ? '❤️ Remove from favorites' : '🤍 Add to favorites' }}
+</button>
