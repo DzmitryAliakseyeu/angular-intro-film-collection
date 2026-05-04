@@ -2,10 +2,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex: 1 0 250px;
     border: 1px solid #000;
     border-radius: 10px;
     height: 350px;
+    width: 280px;
+    box-sizing:  border-box;
+    .poster {
+        width: inherit;
+    }
     cursor: pointer;
     .poster-image {
         height: 60%;
@@ -25,13 +29,5 @@
     p {
         margin: 0 10px;
         font-size: 0.9rem;
-    }       
-    .toggle {
-        background-color: #ffa81c;
-        color: #fff;
-        border: none;
-        padding: 10px;
-        border-radius: 0 0 10px 10px;
-        cursor: pointer;
     }
 }

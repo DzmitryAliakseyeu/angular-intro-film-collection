@@ -3,20 +3,6 @@
     flex-direction: column;
     min-height: 100vh;
     justify-content: space-between;
-    .breadcrumbs {
-        display: flex;
-        gap: 20px;
-        margin: 0 20px;
-        a {
-            padding: 0;
-            display: inline-block;
-            font-size: 0.7em;;
-        }
-    }
-    nav {
-        display: flex;
-        gap: 20px;
-    }
     a {
         text-decoration: none;
         color: #fff;
@@ -31,4 +17,35 @@
     a:hover {
         transform: scale(1.4);
     }
+    .breadcrumbs {
+       
+        display: flex;
+        gap: 20px;
+        margin: 5px 20px;
+        padding: 5px;
+        border-radius: 5px;
+         background-color: #0000008a;
+         width: fit-content;
+        span {
+            font-size: 1rem;
+           
+         
+        }
+        a {
+            padding: 0;
+            display: inline-block;
+      
+        }
+        a:hover {
+            transform: scale(1.1);
+        }
+
+    }
+    nav {
+        display: flex;
+        gap: 20px;
+    }
+
+  
+
 }
