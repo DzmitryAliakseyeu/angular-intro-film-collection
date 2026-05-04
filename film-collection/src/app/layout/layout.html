@@ -2,21 +2,24 @@
     <h1>Film Collection</h1>
     <nav>
         <a routerLink="/home">Home</a>
+        <a routerLink="/about">About</a>
     </nav>
 </header>
 <main>
     <div class="breadcrumbs">
         <nav>
             @if (isDetailsPage()) {
-                <div>
-                    <span><a routerLink="/home">Home</a></span>
-                    <span> - </span>
-                    <span>
-                        <a>{{ currentFilmTitle() }}</a>
-                    </span>
-                </div>
+                <span><a routerLink="/home">Home</a></span>
+                <span> - </span>
+                <span>
+                    {{ currentFilmTitle() }}
+                </span>
+            } @else if (isAboutPage()) {
+                <span>About</span>
+            } @else if (isHomePage()) {
+                <span>Home</span>
             } @else {
-                <span><a>Home</a></span>
+                <span><a routerLink="/home">Home</a></span>
             }
         </nav>
     </div>

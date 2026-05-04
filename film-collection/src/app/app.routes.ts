@@ -16,6 +16,10 @@ export const routes: Routes = [
         path: 'film/:id',
         loadComponent: () => import('./pages/details-page/details-page').then(m => m.DetailsPage)
     },
+     {
+        path: 'about',
+        loadComponent: () => import('./pages/about/about').then(m => m.About)
+    },
     {
         path: '**',
         redirectTo: ''

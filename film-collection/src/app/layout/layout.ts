@@ -25,6 +25,8 @@ export class Layout {
   );
 
   isDetailsPage = computed(() => this.currentUrl().startsWith('/film/'));
+  isAboutPage = computed(() => this.currentUrl() === '/about');
+  isHomePage = computed(() => this.currentUrl() === '/home' || this.currentUrl() === '/');
 
   currentFilmTitle = computed(() => {
     if (!this.isDetailsPage()) return '';
