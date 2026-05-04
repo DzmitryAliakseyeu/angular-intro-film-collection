@@ -5,6 +5,6 @@
 <h2>{{ poster().title }} ({{ poster().year }})</h2>
 <p>{{ poster().genre }}</p>
 <p>{{ poster().rating }}</p>
-<button class="toggle" (click)="filmsService.toggleFavorite(poster().id); $event.stopPropagation()">
+<button class="toggle" (click)="toggleFavorite.emit(poster().id); $event.stopPropagation()">
   {{ poster().isFavorite ? 'Remove from favorites' : 'Add to favorites' }}
 </button>

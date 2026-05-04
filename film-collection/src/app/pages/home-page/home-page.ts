@@ -1,32 +1,29 @@
-import { Component, computed, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { startWith } from 'rxjs';
+import { Component, computed, inject, signal } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Poster } from './components/poster/poster';
 import { Films } from '../../services/films/films';
 import { SearchField } from './directives/search-field';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home-page',
-  imports: [Poster, SearchField, ReactiveFormsModule],
+  imports: [Poster, SearchField],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
 export class HomePage {
-  route = inject(ActivatedRoute);
   filmsService = inject(Films);
-  searchField = new FormControl('', { nonNullable: true });
+  router = inject(Router);
 
-  private searchQuery = toSignal(
-    this.searchField.valueChanges.pipe(startWith('')),
-    { initialValue: '' }
-  );
+  searchQuery = signal('');
 
   displayedFilms = computed(() => {
     const query = this.searchQuery().trim().toLowerCase();
     const films = this.filmsService.filmsCollection();
     return query ? films.filter(f => f.title.toLowerCase().includes(query)) : films;
   });
+
+  navigateToFilm(id: number) {
+    this.router.navigate(['/film', id]);
+  }
 }

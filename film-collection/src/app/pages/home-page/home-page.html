@@ -1,8 +1,12 @@
-<input type="text" placeholder="Search..." appSearchField [formControl]="searchField" />
+<input type="text" placeholder="Search..." appSearchField (input)="searchQuery.set($event.target.value)" />
 
 <div class="posters">
   @for (poster of displayedFilms(); track poster.id) {
-    <app-poster [poster]="poster" />
+    <app-poster
+      [poster]="poster"
+      (cardClick)="navigateToFilm($event)"
+      (toggleFavorite)="filmsService.toggleFavorite($event)"
+    />
   } @empty {
     <p>Nothing found</p>
   }
