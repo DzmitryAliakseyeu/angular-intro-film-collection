@@ -2,14 +2,22 @@
     <h1>Film Collection</h1>
     <nav>
         <a routerLink="/home">Home</a>
-        <a routerLink="/films">About</a>
     </nav>
 </header>
 <main>
-    <div class="breadcrumps">
+    <div class="breadcrumbs">
         <nav>
-            <a routerLink="/home">Breadcrump</a>
-            <a routerLink="/films">Breadcrump</a>
+            @if (isDetailsPage()) {
+                <div>
+                    <span><a routerLink="/home">Home</a></span>
+                    <span> - </span>
+                    <span>
+                        <a>{{ currentFilmTitle() }}</a>
+                    </span>
+                </div>
+            } @else {
+                <span><a>Home</a></span>
+            }
         </nav>
     </div>
     <router-outlet></router-outlet>

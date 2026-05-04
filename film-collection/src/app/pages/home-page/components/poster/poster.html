@@ -1,9 +1,10 @@
-<img src="{{ poster().posterUrl }}" alt="{{ poster().title }}">
-<h2>{{ poster().title }} ( {{ poster().year }} )</h2>
+<div class='poster-image'>
+    <img src="{{ poster().posterUrl }}" alt="{{ poster().title }}">
+</div>
+
+<h2>{{ poster().title }} ({{ poster().year }})</h2>
 <p>{{ poster().genre }}</p>
 <p>{{ poster().rating }}</p>
-<button class='toggle' (click)="filmsService.toggleFavorite(poster().id)">
-  {{ poster().isFavorite ? 'Remove from favorite' : 'Add to favorite' }}
+<button class="toggle" (click)="filmsService.toggleFavorite(poster().id); $event.stopPropagation()">
+  {{ poster().isFavorite ? 'Remove from favorites' : 'Add to favorites' }}
 </button>
-
-{{selectedFilm() | json}}

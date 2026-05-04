@@ -9,14 +9,15 @@ export const routes: Routes = [
     },
     {
         path: 'home',
-        pathMatch: 'full',
         loadComponent: () => import('./pages/home-page/home-page').then(m => m.HomePage),
-        resolve: {
-            films: filmsResolver
-        }
+        resolve: { films: filmsResolver }
     },
     {
-        path: "**",
-        redirectTo: ""
+        path: 'film/:id',
+        loadComponent: () => import('./pages/details-page/details-page').then(m => m.DetailsPage)
+    },
+    {
+        path: '**',
+        redirectTo: ''
     }
 ];

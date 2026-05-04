@@ -1,0 +1,58 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+    padding:  20px;
+    .details {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-around;
+        .poster-image {
+            height: 400px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;          
+            }
+        }
+        .details-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            h2 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            button {
+                background-color: #ffa81c;
+                color: #fff;
+                border: none;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 250px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    :host {
+        .details {
+            flex-direction: column;
+            .poster-image {
+                height: 300px;
+            }
+            .details-info {
+                align-items: center;
+                text-align: center;
+            }
+        }
+    }
+}
